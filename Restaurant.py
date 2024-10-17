@@ -77,7 +77,9 @@ class AdminMenuApp:
                     if not row or len(row) < 5:
                         continue
                     
-                    category, name, price, description, food_type = row
+                    #category, name, price, description, food_type = row
+                    category, name, price, description, food_type, *rest = row[:5]
+                    
                     if len(category) > 0 and category not in self.categories:
                         self.categories.append(category)
                     # Insert separator if category changes

@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import csv  # For reading user data from CSV
 from Customer import RestaurantApp  # Ensure you have this app defined in your developing module
-
+from Restaurant import AdminMenuApp
 
 class PlaceholderEntry(tk.Entry):
     def __init__(self, parent, placeholder, color='grey', *args, **kwargs):
@@ -87,14 +87,14 @@ class LoginWindow:
         self.password_entry.grid(row=1, column=1, pady=5, ipady=8, ipadx=15, padx=10)  # Increased padding inside and outside the entry
         self.password_entry.config(highlightbackground="#CCCCCC", highlightcolor="#4CAF50")
 
-    def login(self):
+    def login_customer(self):
         username = self.username_entry.get()
-        password = self.password_entry.get()        
+        password = self.password_entry.get()
         # Check username and hashed password in the CSV file
         try:
             with open('users.csv', newline='') as file:
                 reader = csv.DictReader(file)
-                for row in reader:
+                for row in reader:                  
                     if row['username'] == username and row['password'] == password:
                         self.app = RestaurantApp(self.parent)
                         self.app.user = username
@@ -104,6 +104,19 @@ class LoginWindow:
                 messagebox.showerror("Login Failed", "Invalid username or password.")
         except FileNotFoundError:
             messagebox.showerror("File Not Found", "The users file was not found.")
+
+    
+    def login_restaurant(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()        
+        if username == 'admin' and password == 'admin123':
+                        admin_root = tk.Toplevel()  # Create a new Toplevel window for AdminMenuApp
+                        self.app = AdminMenuApp(admin_root)  # Pass the Toplevel instance
+                        self.top.destroy()
+                        messagebox.showinfo("Login Success",f"Welcome back {username}!")
+                        return
+        messagebox.showerror("Login Failed", "Access Denied")
+
 
     def create_login_button(self):
         # Frame for button
@@ -115,24 +128,63 @@ class LoginWindow:
         signinlabel = tk.Label(button_frame, text='Sign in as: ' , font=("Arial", 12, "bold"), fg="#4CAF50", bd=0, relief="flat", activebackground="#45A049")
         signinlabel.grid(row=0, column=0, sticky='E')
         
-
-        login_customer = tk.Button(button_frame, text="Customer", font=("Arial", 12, "bold"), 
+        login_customer_button = tk.Button(button_frame, text="Customer", font=("Arial", 12, "bold"), 
                                  bg="#4CAF50", fg="white", bd=0, relief="flat", cursor="hand2", padx= 3,
-                                 activebackground="#45A049", height=2, command=self.login)
-        login_customer.grid(row = 0, column=1, sticky='W', padx= 3)
+                                 activebackground="#45A049", height=2, command=self.login_customer)
+        login_customer_button.grid(row = 0, column=1, sticky='W', padx= 3)
 
-        login_restaurant = tk.Button(button_frame, text="Restaurant",  font=("Arial", 12, "bold"), 
+        login_restaurant_button = tk.Button(button_frame, text="Restaurant",  font=("Arial", 12, "bold"), 
                                  bg="#4CAF50", fg="white", bd=0, relief="flat", cursor="hand2", padx = 3,
-                                 activebackground="#45A049", height=2, command=self.login)
-        login_restaurant.grid(row = 0, column=2, sticky='w', padx=3)
+                                 activebackground="#45A049", height=2,command=self.login_restaurant)
+        login_restaurant_button.grid(row = 0, column=2, sticky='w', padx=3)
 
     def forgot_password(self, event):
         # Display message for Forgot Password
-        messagebox.showinfo("Forgot Password", "Forgot Password functionality will be implemented later.")
+        #messagebox.showinfo("Forgot Password", "Forgot Password functionality will be implemented later.")
+
+        username = self.username_entry.get()  # Get the entered username
+        if not username:
+            messagebox.showwarning("Input Error", "Please enter your username.")
+            return
+
+        # Attempt to retrieve the password for the entered username
+        with open('users.csv', mode='r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if row[0] == username:
+                    # If username is found, display the password
+                    messagebox.showinfo("Password Recovery", f"Your password is: {row[1]}")
+                    return
+
+        # If username is not found, show an error message
+        messagebox.showerror("User Not Found", "Username not found.")
+
 
     def sign_up(self, event):
         # Display message for Sign-up
-        messagebox.showinfo("Sign Up", "Sign-up functionality will be implemented later.")
+        #messagebox.showinfo("Sign Up", "Sign-up functionality will be implemented later.")
+
+        username = self.username_entry.get()  # Get the entered username
+        password = self.password_entry.get()  # Get the entered password
+
+        if not username or not password:
+            messagebox.showwarning("Input Error", "Please enter both username and password.")
+            return
+
+        # Check if the username already exists
+        with open('users.csv', mode='r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if row[0] == username:
+                    messagebox.showerror("Registration Error", "Username already exists. Please choose another one.")
+                    return
+
+        # If the username doesn't exist, append the new user to the CSV file
+        with open('users.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([username, password])  # Add the new username and password
+
+        messagebox.showinfo("Registration Successful", "You have been registered successfully! You can now log in.")
 
     def clear_focus(self, event):
         widget = event.widget
