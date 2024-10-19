@@ -50,11 +50,11 @@ class OrderManagementApp(tk.Toplevel):
             self.after(10000, self.refresh_orders)
             return
 
-        self.orders = [a for a in DL.read_orders_csv() if a['Status'] == 'Pending']
-        print(self.orders)
+        self.orders = [a for a in DL.read_orders_csv() if a['Status'] == 'Pending' or a['Status'] == 'Preparing']
+        self.orders.reverse()
 
         # Populate the tabs with new data
-        self.populate_tabs(6)
+        self.populate_tabs(7)
 
         # Schedule the next refresh after 10 seconds
         self.after(10000, self.refresh_orders)
@@ -84,17 +84,17 @@ class OrderManagementApp(tk.Toplevel):
             order for order in self.orders
             if search_term in str(order["OrderID"]).lower() or
             search_term in order["CustomerID"].lower() or
-            any(search_term in item.lower() for item in order["Contents"].keys())
+            any(search_term in item.lower() for item in [str(list(a.keys())[0]) for a in order['Contents']])
         ]
 
     def on_search(self, event=None):
         """Handles the search input and updates the displayed orders."""
-        self.populate_tabs(6)
+        self.populate_tabs(7)
 
     def clear_search(self):
         """Clears the search bar and repopulates the tabs with all orders."""
         self.search_var.set("")
-        self.populate_tabs(6)
+        self.populate_tabs(7)
 
     def create_order_card(self, parent, order):
         """Creates a card for each order displaying its details."""

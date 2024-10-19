@@ -3,8 +3,10 @@ Appetizers,Nachos,6.99,Crispy nachos with melted cheese and jalapenos,Vegetarian
 Appetizers,Chicken Wings,8.99,Spicy marinated chicken wings,Non-Vegetarian
 Appetizers,Spring Rolls,5.99,Crispy rolls filled with vegetables,Vegetarian
 Appetizers,Stuffed Mushrooms,7.48,Mushrooms stuffed with cheese and herbs,Vegetarian
-Appetizers,BBQ Meatballs Nig,9.99,Meatballs with BBQ sauce,Non-Vegetarian
+Appetizers,BBQ Meatballs,9.99,Meatballs with BBQ sauce,Non-Vegetarian
 Appetizers,Garlic Breadsticks,4.99,Toasted bread with garlic butter,Vegetarian
+Appetizers,Paneer Chilly,100,Chines Paneer,Vegetarian
+Appetizers,Prawn Kebab,100,Kebab of prawn,Non-Vegetarian
 Main Course,Beef Steak,25.99,Grilled beef steak with mashed potatoes,Non-Vegetarian
 Main Course,Grilled Chicken,12.99,Grilled chicken breast served with vegetables,Non-Vegetarian
 Main Course,Fish Tacos,14.49,Soft tacos filled with grilled fish,Non-Vegetarian
@@ -16,12 +18,12 @@ Main Course,Margarita Pizza,11.99,Classic pizza with tomato mozzarella and basil
 Desserts,Chocolate Cake,6.49,Rich chocolate cake with chocolate ganache,Vegetarian
 Desserts,Fruit Salad,4.99,Fresh seasonal fruits,Vegetarian
 Desserts,Cheesecake,7.49,Creamy cheesecake with a graham cracker crust,Vegetarian
-Desserts,Tiramisu,6.99,Classic Italian dessert with coffee and mascarpone,Vegetarian
+Desserts,Tiramisu,8.99,Classic Italian dessert with coffee and mascarpone,Vegetarian
 Desserts,Brownie Sundae,7.99,Chocolate brownie with ice cream and fudge sauce,Vegetarian
 Desserts,Apple Pie,5.99,Traditional apple pie with cinnamon,Vegetarian
 Desserts,Gulab Jamun,4.49,Soft dumplings soaked in sugar syrup,Vegetarian
 Desserts,Rasmalai,5.99,Cheese dumplings in sweetened milk,Vegetarian
-Desserts,Chocolate Mousse,6.49,Light and creamy chocolate mousse,Vegetarian
+Desserts,Chocolate Mousse,6.66,Light and creamy chocolate mousse,Vegetarian
 Desserts,Custard Tart,6.99,Rich egg custard in a buttery tart shell,Vegetarian
 Beverages,Coffee,2.99,Hot brewed coffee,Vegetarian
 Beverages,Tea,2.49,Freshly brewed tea,Vegetarian
@@ -33,5 +35,6 @@ Beverages,Milkshake,4.99,Thick and creamy milkshake,Vegetarian
 Beverages,Orange Juice,3.49,Freshly squeezed orange juice,Vegetarian
 Beverages,Cola,2.49,Chilled soft drink,Vegetarian
 Beverages,Iced Coffee,3.99,Cold coffee with ice,Vegetarian
+Beverages,Fresh Lime Soda,100,Lime Soda Fresh,Vegetarian
 Sides,French Fries,100,potato,Vegetarian
 Alcohol,Rose,1000,Fine Wine,Vegetarian

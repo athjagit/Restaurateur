@@ -31,6 +31,13 @@ class CustomerCheckout:
         return f"{self.today_date}{self.username}{order_number}"
 
     def get_next_order_number(self):
+        def getlastno(a):
+            s=''
+            for i in range(len(a)):
+                if not a[len(a)-i-1].isdigit():
+                    return s
+                else:
+                    s = a[len(a)-i-1] + s
         """Checks {username}_orders.csv for today's orders and returns the next order number."""
         file_name = f"{self.username}_orders.csv"
         order_number = 1
@@ -38,9 +45,9 @@ class CustomerCheckout:
             with open(file_name, mode='r') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    if row['CustomerID'].startswith(self.today_date):
+                    if row['OrderID'].startswith(self.today_date):
                         # Extract the order number
-                        order_number = int(row['CustomerID'][-1]) + 1
+                        order_number = int(getlastno(row['OrderID'])) + 1
         except FileNotFoundError:
             # If file doesn't exist, this is the first order
             order_number = 1

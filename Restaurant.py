@@ -251,7 +251,7 @@ class AdminMenuApp(tk.Toplevel):
 
         if item_id is None:
             # Add new item
-            item_id = self.tree.insert("", "end", values=(category, name, price, description, food_type))
+            item_id = self.tree.insert("", self.get_last_index(category), values=(category, name, price, description, food_type))
             self.action_history.append({
                 "action": "add",
                 "item": (category, name, price, description, food_type)
@@ -273,6 +273,18 @@ class AdminMenuApp(tk.Toplevel):
         messagebox.showinfo("Success", "Item saved successfully.")
         # Close the dialog window
         self.category_combobox.master.destroy()
+
+    def get_last_index(self, cat):
+        index = 'end'
+        lastcatwassame = False
+        items = [self.tree.item(item, 'values') for item in self.tree.get_children()]
+        for i in range(len(items)) :
+            if lastcatwassame and not items[i][0] == cat:
+                return i
+            if items[i][0] == cat:
+                lastcatwassame = True
+
+            
     
     def on_closing(self):
         self.destroy()  # Close AdminMenuApp
