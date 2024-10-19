@@ -1,26 +1,18 @@
 Category,Name,Price,Description,Type
-Appetizers,Spring Rolls,5.99,Crispy rolls filled with vegetables,Vegetarian
-Appetizers,Chicken Wings,8.99,Spicy marinated chicken wings,Non-Vegetarian
-Appetizers,Stuffed Mushrooms,7.49,Mushrooms stuffed with cheese and herbs,Vegetarian
 Appetizers,Nachos,6.99,Crispy nachos with melted cheese and jalapenos,Vegetarian
-Appetizers,Garlic Bread,4.99,Toasted bread with garlic butter,Vegetarian
-Appetizers,Bruschetta,5.49,Toasted bread topped with tomatoes and basil,Vegetarian
-Appetizers,French Fries,3.99,Crispy golden fries,Vegetarian
-Appetizers,Paneer Tikka,7.99,Grilled paneer with spices,Vegetarian
-Appetizers,BBQ Meatballs,9.99,Meatballs with BBQ sauce,Non-Vegetarian
-Appetizers,Onion Rings,4.49,Crispy fried onion rings,Vegetarian
-
+Appetizers,Chicken Wings,8.99,Spicy marinated chicken wings,Non-Vegetarian
+Appetizers,Spring Rolls,5.99,Crispy rolls filled with vegetables,Vegetarian
+Appetizers,Stuffed Mushrooms,7.48,Mushrooms stuffed with cheese and herbs,Vegetarian
+Appetizers,BBQ Meatballs Nig,9.99,Meatballs with BBQ sauce,Non-Vegetarian
+Appetizers,Garlic Breadsticks,4.99,Toasted bread with garlic butter,Vegetarian
+Main Course,Beef Steak,25.99,Grilled beef steak with mashed potatoes,Non-Vegetarian
 Main Course,Grilled Chicken,12.99,Grilled chicken breast served with vegetables,Non-Vegetarian
-Main Course,Paneer Butter Masala,11.99,Cottage cheese in a creamy tomato gravy,Vegetarian
-Main Course,Spaghetti Bolognese,13.99,Classic Italian pasta with meat sauce,Non-Vegetarian
-Main Course,Vegetable Stir Fry,10.99,Stir-fried vegetables in a savory sauce,Vegetarian
-Main Course,Beef Steak,15.99,Grilled beef steak with mashed potatoes,Non-Vegetarian
 Main Course,Fish Tacos,14.49,Soft tacos filled with grilled fish,Non-Vegetarian
-Main Course,Vegetable Curry,10.49,Mixed vegetables cooked in a spicy curry sauce,Vegetarian
+Main Course,Vegetable Stir Fry,10.99,Stir-fried vegetables in a savory sauce,Vegetarian
 Main Course,Lamb Chops,18.99,Grilled lamb chops with mint sauce,Non-Vegetarian
-Main Course,Margarita Pizza,11.99,Classic pizza with tomato, mozzarella, and basil,Vegetarian
+Main Course,Vegetable Curry,10.49,Mixed vegetables cooked in a spicy curry sauce,Vegetarian
 Main Course,Chicken Alfredo Pasta,13.99,Chicken pasta in creamy Alfredo sauce,Non-Vegetarian
-
+Main Course,Margarita Pizza,11.99,Classic pizza with tomato mozzarella and basil,Vegetarian
 Desserts,Chocolate Cake,6.49,Rich chocolate cake with chocolate ganache,Vegetarian
 Desserts,Fruit Salad,4.99,Fresh seasonal fruits,Vegetarian
 Desserts,Cheesecake,7.49,Creamy cheesecake with a graham cracker crust,Vegetarian
@@ -31,14 +23,15 @@ Desserts,Gulab Jamun,4.49,Soft dumplings soaked in sugar syrup,Vegetarian
 Desserts,Rasmalai,5.99,Cheese dumplings in sweetened milk,Vegetarian
 Desserts,Chocolate Mousse,6.49,Light and creamy chocolate mousse,Vegetarian
 Desserts,Custard Tart,6.99,Rich egg custard in a buttery tart shell,Vegetarian
-
 Beverages,Coffee,2.99,Hot brewed coffee,Vegetarian
 Beverages,Tea,2.49,Freshly brewed tea,Vegetarian
 Beverages,Lemonade,3.99,Refreshing homemade lemonade,Vegetarian
 Beverages,Mango Smoothie,4.99,Fresh mango blended with yogurt,Vegetarian
-Beverages,Cola,2.49,Chilled soft drink,Vegetarian
-Beverages,Orange Juice,3.49,Freshly squeezed orange juice,Vegetarian
 Beverages,Green Tea,3.99,Aromatic green tea,Vegetarian
-Beverages,Iced Coffee,3.99,Cold coffee with ice,Vegetarian
-Beverages,Milkshake,4.99,Thick and creamy milkshake,Vegetarian
 Beverages,Sparkling Water,2.99,Carbonated water,Vegetarian
+Beverages,Milkshake,4.99,Thick and creamy milkshake,Vegetarian
+Beverages,Orange Juice,3.49,Freshly squeezed orange juice,Vegetarian
+Beverages,Cola,2.49,Chilled soft drink,Vegetarian
+Beverages,Iced Coffee,3.99,Cold coffee with ice,Vegetarian
+Sides,French Fries,100,potato,Vegetarian
+Alcohol,Rose,1000,Fine Wine,Vegetarian
