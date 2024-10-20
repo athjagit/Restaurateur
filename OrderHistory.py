@@ -107,11 +107,11 @@ class OrderHistoryApp(tk.Toplevel):
         info_button.grid(row=0, column=1, columnspan=2, padx=(3, 10), pady=(5, 0), sticky='w')
 
         custname_label = tk.Label(frame, text=f"Customer ID: {customer_id}", font=("Arial", 16, "normal"), bg="white")
-        custname_label.grid(row=0, column=12, sticky="e", padx=10, pady=(7, 0))
+        custname_label.grid(row=0, column=1, sticky="e", padx=10, pady=(7, 0), columnspan=2)
 
         # Status label (non-editable)
         status_label = tk.Label(frame, text=f"Status: {status}", font=("Arial", 14, "italic"), bg="white")
-        status_label.grid(row=1, column=1, sticky="e", padx=10, pady=10)
+        status_label.grid(row=1, column=2, sticky="e", padx=10, pady=10)
 
     def on_closing(self):
         self.destroy()

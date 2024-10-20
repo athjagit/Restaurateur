@@ -1,6 +1,3 @@
-##TODO menu options. checkout. login
-
-
 import tkinter as tk
 from tkinter import ttk, Menu,messagebox
 from datetime import datetime
@@ -27,9 +24,6 @@ class RestaurantApp:
         self.order = []
         # Create the header bar
         self.create_header()
-
-        # Create menu bar with 'Account' options
-        #self.create_menu_bar()
 
         # Category selection combobox
         self.category_var = tk.StringVar()
