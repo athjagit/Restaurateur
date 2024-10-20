@@ -150,7 +150,7 @@ class LoginWindow:
             for row in reader:
                 if row[0] == username:
                     # If username is found, display the password
-                    messagebox.showinfo("Password Recovery", f"Your password is: {row[1]}")
+                    messagebox.showinfo("Password Recovery", "Contact admin to recover password!")
                     return
 
         # If username is not found, show an error message
