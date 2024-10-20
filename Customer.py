@@ -231,12 +231,12 @@ class RestaurantApp:
             # Revert the button appearance
             def on_release(event):
                 self.update_order()
-                self.on_checkout()
+                
                 canvas.itemconfig(button, fill="blue")
                 if len([a for a in self.qtyvars if a['QtyVar'].get()>0])==0:
                     messagebox.showerror('No Item Sected', 'Please select at least one item to proceed.')
                 else:
-                    pass  # Change back to original color on release
+                    self.on_checkout()
 
             # Bind the button click event
             canvas.bind("<ButtonPress-1>", on_press)
@@ -265,6 +265,9 @@ class RestaurantApp:
         # Prepare order details for the popup
         order_details = "\n".join(f"{list(item.keys())[0]}: {list(item.values())[0]}x" for item in contents)
         messagebox.showinfo("Checkout Successful", f"Order Details:\n{order_details}\n\nTotal Price: ₹{total:.2f}")
+        for qtyvar in self.qtyvars:
+            qtyvar['QtyVar'].set(0)
+            qtyvar['Qty'] = 0
 
 
 

@@ -180,11 +180,12 @@ class AdminMenuApp(tk.Toplevel):
 
         last_action = self.action_history.pop()
         if last_action["action"] == "add":
-            self.tree.delete(self.tree.get_children()[-1])  # Remove last item
+            self.tree.delete(self.tree.get_children()[-1 if last_action['index'] == 'end' else last_action['index']])  # Remove last item
         elif last_action["action"] == "edit":
             # Restore previous values for edit
-            item_id = self.tree.insert("", "end", values=last_action["item"])
-            self.tree.item(item_id, values=last_action["new_values"])  # Restore old item values
+            self.tree.delete(self.tree.get_children()[last_action['index']])
+            item_id = self.tree.insert("", last_action['index'], values=last_action["item"])
+            self.tree.item(item_id, values=last_action["item"])  # Restore old item values
         elif last_action["action"] == "delete":
             last_action["items"].sort(key=lambda element: element['index'])
             for deleted in last_action["items"]:
@@ -195,7 +196,7 @@ class AdminMenuApp(tk.Toplevel):
 
     def update_undo_button(self):
         """Enable or disable the undo button based on action history."""
-        self.undo_btn.config(state="normal" if self.action_history else "disabled")
+        self.undo_btn.config(state="normal" if len(self.action_history)>0 else "disabled")
 
     def on_selection_change(self, event):
         """Disable Edit button if multiple items are selected."""
@@ -204,37 +205,37 @@ class AdminMenuApp(tk.Toplevel):
 
     def edit_dialog(self, item_values=None, item_id=None):
         """Open a dialog to edit/add menu items."""
-        dialog = tk.Toplevel(self)
-        dialog.title("Edit Item" if item_values else "Add Item")
-        dialog.geometry("280x270")
+        self.dialog = tk.Toplevel(self)
+        self.dialog.title("Edit Item" if item_values else "Add Item")
+        self.dialog.geometry("280x270")
 
-        tk.Label(dialog, text="Category:").grid(row=0, column=0, padx=10, pady=10, sticky="w")
-        self.category_combobox = ttk.Combobox(dialog, values=self.categories, state="readonly" if item_values else "normal")
+        tk.Label(self.dialog, text="Category:").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+        self.category_combobox = ttk.Combobox(self.dialog, values=self.categories, state="readonly" if item_values else "normal")
         self.category_combobox.grid(row=0, column=1, padx=10, pady=10)
         self.category_combobox.set(item_values[0] if item_values else "")
 
-        tk.Label(dialog, text="Name:").grid(row=1, column=0, padx=10, pady=10, sticky="w")
-        self.name_entry = tk.Entry(dialog)
+        tk.Label(self.dialog, text="Name:").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+        self.name_entry = tk.Entry(self.dialog)
         self.name_entry.grid(row=1, column=1, padx=10, pady=10)
         self.name_entry.insert(0, item_values[1] if item_values else "")
 
-        tk.Label(dialog, text="Price:").grid(row=2, column=0, padx=10, pady=10, sticky="w")
-        self.price_entry = tk.Entry(dialog)
+        tk.Label(self.dialog, text="Price:").grid(row=2, column=0, padx=10, pady=10, sticky="w")
+        self.price_entry = tk.Entry(self.dialog)
         self.price_entry.grid(row=2, column=1, padx=10, pady=10)
         self.price_entry.insert(0, item_values[2] if item_values else "")
 
-        tk.Label(dialog, text="Description:").grid(row=3, column=0, padx=10, pady=10, sticky="w")
-        self.description_entry = tk.Entry(dialog)
+        tk.Label(self.dialog, text="Description:").grid(row=3, column=0, padx=10, pady=10, sticky="w")
+        self.description_entry = tk.Entry(self.dialog)
         self.description_entry.grid(row=3, column=1, padx=10, pady=10)
         self.description_entry.insert(0, item_values[3] if item_values else "")
 
-        tk.Label(dialog, text="Type:").grid(row=4, column=0, padx=10, pady=10, sticky="w")
-        self.type_combobox = ttk.Combobox(dialog, values=["Vegetarian", "Non-Vegetarian"], state="readonly")
+        tk.Label(self.dialog, text="Type:").grid(row=4, column=0, padx=10, pady=10, sticky="w")
+        self.type_combobox = ttk.Combobox(self.dialog, values=["Vegetarian", "Non-Vegetarian"], state="readonly")
         self.type_combobox.grid(row=4, column=1, padx=10, pady=10)
         self.type_combobox.set(item_values[4] if item_values else "")
 
         # Add Save button
-        self.save_button = tk.Button(dialog, text="Save", command=lambda: self.save_item(item_values, item_id), padx=10, pady=5)
+        self.save_button = tk.Button(self.dialog, text="Save", command=lambda: self.save_item(item_values, item_id), padx=10, pady=5)
         self.save_button.grid(row=5, column=0, columnspan=2, pady=20)
 
     def save_item(self, item_values, item_id):
@@ -249,26 +250,26 @@ class AdminMenuApp(tk.Toplevel):
             messagebox.showwarning("Input Error", "All fields must be filled in.")
             return
 
-        if item_id is None:
-            # Add new item
-            item_id = self.tree.insert("", self.get_last_index(category), values=(category, name, price, description, food_type))
-            self.action_history.append({
-                "action": "add",
-                "item": (category, name, price, description, food_type)
-            })
-            if category not in self.categories:
-                self.categories.append(category)
-        else:
-            # Edit existing item
+        if item_id:  # If editing an existing item
+            print('editing')
+            index = self.tree.index(item_id)
             self.tree.item(item_id, values=(category, name, price, description, food_type))
-            # Update action history for edit
             self.action_history.append({
-                "action": "edit",
-                "item": item_values,
-                "new_values": (category, name, price, description, food_type)
+            "action": "edit",
+            "item": item_values,
+            "index": index
             })
-
+        else:  # Adding new item
+            # Get the last item index in the same category
+            last_item_index = self.get_last_index(category)
+            self.tree.insert("", last_item_index, values=(category, name, price, description, food_type))
+            self.action_history.append({
+            "action": "add",
+            "item": (category, name, price, description, food_type),
+            "index": last_item_index
+            })
         self.save_menu([self.tree.item(item, 'values') for item in self.tree.get_children()])
+        self.dialog.destroy()
         self.update_undo_button()
         messagebox.showinfo("Success", "Item saved successfully.")
         # Close the dialog window
@@ -283,6 +284,7 @@ class AdminMenuApp(tk.Toplevel):
                 return i
             if items[i][0] == cat:
                 lastcatwassame = True
+        return index
 
             
     

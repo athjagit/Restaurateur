@@ -1,40 +1,42 @@
 Category,Name,Price,Description,Type
-Appetizers,Nachos,6.99,Crispy nachos with melted cheese and jalapenos,Vegetarian
-Appetizers,Chicken Wings,8.99,Spicy marinated chicken wings,Non-Vegetarian
-Appetizers,Spring Rolls,5.99,Crispy rolls filled with vegetables,Vegetarian
-Appetizers,Stuffed Mushrooms,7.48,Mushrooms stuffed with cheese and herbs,Vegetarian
-Appetizers,BBQ Meatballs,9.99,Meatballs with BBQ sauce,Non-Vegetarian
-Appetizers,Garlic Breadsticks,4.99,Toasted bread with garlic butter,Vegetarian
-Appetizers,Paneer Chilly,100,Chines Paneer,Vegetarian
-Appetizers,Prawn Kebab,100,Kebab of prawn,Non-Vegetarian
-Main Course,Beef Steak,25.99,Grilled beef steak with mashed potatoes,Non-Vegetarian
-Main Course,Grilled Chicken,12.99,Grilled chicken breast served with vegetables,Non-Vegetarian
-Main Course,Fish Tacos,14.49,Soft tacos filled with grilled fish,Non-Vegetarian
-Main Course,Vegetable Stir Fry,10.99,Stir-fried vegetables in a savory sauce,Vegetarian
-Main Course,Lamb Chops,18.99,Grilled lamb chops with mint sauce,Non-Vegetarian
-Main Course,Vegetable Curry,10.49,Mixed vegetables cooked in a spicy curry sauce,Vegetarian
-Main Course,Chicken Alfredo Pasta,13.99,Chicken pasta in creamy Alfredo sauce,Non-Vegetarian
-Main Course,Margarita Pizza,11.99,Classic pizza with tomato mozzarella and basil,Vegetarian
-Desserts,Chocolate Cake,6.49,Rich chocolate cake with chocolate ganache,Vegetarian
-Desserts,Fruit Salad,4.99,Fresh seasonal fruits,Vegetarian
-Desserts,Cheesecake,7.49,Creamy cheesecake with a graham cracker crust,Vegetarian
-Desserts,Tiramisu,8.99,Classic Italian dessert with coffee and mascarpone,Vegetarian
-Desserts,Brownie Sundae,7.99,Chocolate brownie with ice cream and fudge sauce,Vegetarian
-Desserts,Apple Pie,5.99,Traditional apple pie with cinnamon,Vegetarian
-Desserts,Gulab Jamun,4.49,Soft dumplings soaked in sugar syrup,Vegetarian
-Desserts,Rasmalai,5.99,Cheese dumplings in sweetened milk,Vegetarian
-Desserts,Chocolate Mousse,6.66,Light and creamy chocolate mousse,Vegetarian
-Desserts,Custard Tart,6.99,Rich egg custard in a buttery tart shell,Vegetarian
-Beverages,Coffee,2.99,Hot brewed coffee,Vegetarian
-Beverages,Tea,2.49,Freshly brewed tea,Vegetarian
-Beverages,Lemonade,3.99,Refreshing homemade lemonade,Vegetarian
-Beverages,Mango Smoothie,4.99,Fresh mango blended with yogurt,Vegetarian
-Beverages,Green Tea,3.99,Aromatic green tea,Vegetarian
-Beverages,Sparkling Water,2.99,Carbonated water,Vegetarian
-Beverages,Milkshake,4.99,Thick and creamy milkshake,Vegetarian
-Beverages,Orange Juice,3.49,Freshly squeezed orange juice,Vegetarian
-Beverages,Cola,2.49,Chilled soft drink,Vegetarian
-Beverages,Iced Coffee,3.99,Cold coffee with ice,Vegetarian
-Beverages,Fresh Lime Soda,100,Lime Soda Fresh,Vegetarian
-Sides,French Fries,100,potato,Vegetarian
-Alcohol,Rose,1000,Fine Wine,Vegetarian
+Appetizers,Nachos,180,Crispy nachos with melted cheese and jalapenos,Vegetarian
+Appetizers,Chicken Wings,250,Spicy marinated chicken wings,Non-Vegetarian
+Appetizers,Spring Rolls,150,Crispy rolls filled with vegetables,Vegetarian
+Appetizers,Stuffed Mushrooms,225,Mushrooms stuffed with cheese and herbs,Vegetarian
+Appetizers,Paneer Chilly,220,Chilli paneer with Chinese spices,Vegetarian
+Appetizers,Garlic Breadsticks,120,Toasted bread with garlic butter,Vegetarian
+Appetizers,Prawn Kebab,289,Kebab of prawn,Non-Vegetarian
+Appetizers,Vegetable Samosa,180,Spiced vegetable samosas,Vegetarian
+Appetizers,Aloo Tikki,100,Crispy potato patties,Vegetarian
+Main Course,Grilled Chicken,329,Grilled chicken breast served with vegetables,Non-Vegetarian
+Main Course,Fish Tacos,400,Soft tacos filled with grilled fish,Non-Vegetarian
+Main Course,Vegetable Stir Fry,280,Stir-fried vegetables in a savory sauce,Vegetarian
+Main Course,Lamb Chops,450,Grilled lamb chops with mint sauce,Non-Vegetarian
+Main Course,Vegetable Curry,270,Mixed vegetables cooked in a spicy curry sauce,Vegetarian
+Main Course,Chicken Alfredo Pasta,320,Chicken pasta in creamy Alfredo sauce,Non-Vegetarian
+Main Course,Margarita Pizza,290,Classic pizza with tomato mozzarella and basil,Vegetarian
+Main Course,Paneer Butter Masala,340,Paneer in a rich buttery tomato sauce,Vegetarian
+Main Course,Dal Makhani,240,Slow-cooked lentils in creamy tomato sauce,Vegetarian
+Main Course,Paneer Lababdar,270,Tasty Paneer curry,Vegetarian
+Desserts,Chocolate Cake,200,Rich chocolate cake with chocolate ganache,Vegetarian
+Desserts,Gulab Jamun,100,Soft dumplings soaked in sugar syrup,Vegetarian
+Desserts,Rasmalai,120,Cheese dumplings in sweetened milk,Vegetarian
+Desserts,Brownie Sundae,180,Chocolate brownie with ice cream and fudge sauce,Vegetarian
+Desserts,Apple Pie,150,Traditional apple pie with cinnamon,Vegetarian
+Desserts,Chocolate Mousse,170,Light and creamy chocolate mousse,Vegetarian
+Desserts,Rasgulla,90,Sweet syrup-soaked cheese balls,Vegetarian
+Desserts,Kheer,110,Traditional Indian rice pudding,Vegetarian
+Beverages,Coffee,80,Hot brewed coffee,Vegetarian
+Beverages,Tea,50,Freshly brewed tea,Vegetarian
+Beverages,Lemonade,100,Refreshing homemade lemonade,Vegetarian
+Beverages,Mango Smoothie,120,Fresh mango blended with yogurt,Vegetarian
+Beverages,Green Tea,90,Aromatic green tea,Vegetarian
+Beverages,Sparkling Water,70,Carbonated water,Vegetarian
+Beverages,Milkshake,150,Thick and creamy milkshake,Vegetarian
+Beverages,Fresh Lime Soda,90,Lime Soda Fresh,Vegetarian
+Sides,French Fries,120,Potato fries,Vegetarian
+Sides,Masala Papad,60,Crispy papad topped with onions and spices,Vegetarian
+Sides,Salad,80,Fresh garden salad,Vegetarian
+Alcohol,Rose,1500,Fine Wine,Vegetarian
+Alcohol,Mojito,800,Fresh Mint and White Rum Mojito with lemon soda base,Vegetarian
+Alcohol,Champagne,1700,Moet and Chandon,Vegetarian

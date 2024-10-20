@@ -99,7 +99,6 @@ class LoginWindow:
                         self.app = RestaurantApp(self.parent,username)
                         self.app.user = username
                         self.top.destroy()
-                        messagebox.showinfo("Login Success", f"Welcome {username}!")
                         return
                 messagebox.showerror("Login Failed", "Invalid username or password.")
         except FileNotFoundError:
@@ -110,11 +109,11 @@ class LoginWindow:
         username = self.username_entry.get()
         password = self.password_entry.get()        
         if username == 'admin' and password == 'admin123':
-                        admin_root = tk.Toplevel()  # Create a new Toplevel window for AdminMenuApp
-                        self.app = AdminDashboard(admin_root)  # Pass the Toplevel instance
-                        self.top.destroy()
-                        messagebox.showinfo("Login Success",f"Welcome back {username}!")
-                        return
+            admin_root = tk.Toplevel()  # Create a new Toplevel window for AdminMenuApp
+            self.app = AdminDashboard(admin_root)  # Pass the Toplevel instance
+            self.top.destroy()
+            messagebox.showinfo("Login Success",f"Welcome back {username}!")
+            return
         messagebox.showerror("Login Failed", "Access Denied")
 
 
@@ -140,8 +139,6 @@ class LoginWindow:
 
     def forgot_password(self, event):
         # Display message for Forgot Password
-        #messagebox.showinfo("Forgot Password", "Forgot Password functionality will be implemented later.")
-
         username = self.username_entry.get()  # Get the entered username
         if not username:
             messagebox.showwarning("Input Error", "Please enter your username.")
@@ -161,9 +158,6 @@ class LoginWindow:
 
 
     def sign_up(self, event):
-        # Display message for Sign-up
-        #messagebox.showinfo("Sign Up", "Sign-up functionality will be implemented later.")
-
         username = self.username_entry.get()  # Get the entered username
         password = self.password_entry.get()  # Get the entered password
 

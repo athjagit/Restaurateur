@@ -55,13 +55,16 @@ class AdminDashboard(tk.Toplevel):
         self.resizable(False, False)  # Non-resizable
 
     def open_image(self, event=None):
-        file_path = filedialog.askopenfilename(filetypes=[("Image files", "*.png;*.jpg")])
-        if file_path:
-            img = Image.open(file_path).resize((int(200*self.w/self.h), 200), Image.LANCZOS)
-            img.save('rest_pic.png')  # Save as rest_pic.png
-            img_tk = ImageTk.PhotoImage(img)
-            self.photo_label.config(image=img_tk)
-            self.photo_label.image = img_tk
+        try:
+            file_path = filedialog.askopenfilename(filetypes=[("Image files", "*.png;*.jpg")])
+            if file_path:
+                img = Image.open(file_path).resize((int(200*self.w/self.h), 200), Image.LANCZOS)
+                img.save('rest_pic.png')  # Save as rest_pic.png
+                img_tk = ImageTk.PhotoImage(img)
+                self.photo_label.config(image=img_tk)
+                self.photo_label.image = img_tk
+        except Exception:
+            pass
 
     def open_admin_menu_app(self):
         # Open AdminMenuApp using the original root passed from login.py
