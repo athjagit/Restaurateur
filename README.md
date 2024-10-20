@@ -9,6 +9,8 @@
 - Netheti Venkata Sai Varshith - IMT2024044: Testing, Logins, Data Handling, Coordination
 - Rohit Antony - IMT2024071 : Order History Management, Testing, Data Handling, Coordination
 
+Link: https://github.com/athjagit/Restaurateur
+
 ## How to Run the Project:
 
 To run this project, follow these steps:
