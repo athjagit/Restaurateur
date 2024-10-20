@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 import csv  # For reading user data from CSV
-from Customer import RestaurantApp  # Ensure you have this app defined in your developing module
-from RestLogin import AdminDashboard
+from Menu import RestaurantApp
+from RestaurantDashboard import AdminDashboard
 
 class PlaceholderEntry(tk.Entry):
     def __init__(self, parent, placeholder, color='grey', *args, **kwargs):
@@ -150,7 +150,7 @@ class LoginWindow:
             for row in reader:
                 if row[0] == username:
                     # If username is found, display the password
-                    messagebox.showinfo("Password Recovery", "Contact admin to recover password!")
+                    messagebox.showinfo("Password Recovery", "Contact Admin to recover password.")
                     return
 
         # If username is not found, show an error message
@@ -176,7 +176,7 @@ class LoginWindow:
         # If the username doesn't exist, append the new user to the CSV file
         with open('users.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([username, password])  # Add the new username and password
+            writer.writerow([username, password])
 
         messagebox.showinfo("Registration Successful", "You have been registered successfully! You can now log in.")
 
