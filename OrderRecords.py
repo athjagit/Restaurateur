@@ -72,7 +72,7 @@ class OrderHistoryApp(tk.Toplevel):
             order for order in self.orders
             if search_term in str(order["OrderID"]).lower() or
             search_term in order["CustomerID"].lower() or
-            any(search_term in item.lower() for item in order["Contents"].keys())
+            any(search_term in item.lower() for item in [str(list(a.keys())[0]) for a in order['Contents']])
         ]
 
     def on_search(self, event=None):
